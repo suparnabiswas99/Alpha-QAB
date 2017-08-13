@@ -1,0 +1,71 @@
+{% extends "posts/base.html" %}
+
+
+
+{% block content %}
+
+
+
+    <div class="row">
+      <br><br><br><br>
+      <div class="col s6 offset-s1">
+
+        <div class="#ffee58 yellow lighten-1">
+
+          <div class="container">
+
+            <div class="section">
+
+                <h5><strong>About Us</strong></h5>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sodales, ligula eu vulputate cursus, magna nibh imperdiet enim, volutpat venenatis velit urna ac tortor. Donec bibendum purus orci, vel mattis arcu pretium quis. Aliquam aliquet consectetur velit, et congue nisl egestas vitae. Ut tristique ligula ut quam commodo, aliquet vehicula sapien laoreet. Quisque mattis malesuada tellus sit amet vulputate. Vivamus urna eros, maximus et venenatis eget, porta sed purus. Etiam euismod, risus eget lacinia vehicula, nisi felis tincidunt nibh, feugiat blandit est ex et risus. Mauris in faucibus elit. Proin in turpis nibh. Pellentesque gravida, ante convallis rhoncus tempor, ligula neque ullamcorper magna, eu rutrum tellus nibh vitae dolor. Vivamus blandit, urna eget vestibulum iaculis, risus libero malesuada urna, et imperdiet libero tellus eu arcu.</p>
+
+                <div class="right-align">
+
+                   <a class="btn-floating btn-small waves-effect waves-light red"><i class="material-icons">delete</i></a>
+                    <a class="btn-floating btn-small waves-effect waves-light blue"><i class="material-icons">mode_edit</i></a>
+
+
+                </div>
+
+            </div>
+
+          </div>
+
+
+        </div>
+        <br>
+
+        <div class="fb-like" data-href="{{request.build_absolute_url}}" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
+
+        <div class="fb-comments" data-href="{{request.build_absolute_url}}" data-numposts="5"> </div>
+
+
+        <div class="fb-login-button" data-max-rows="1" data-size="large" data-button-type="login_with" data-show-faces="false" data-auto-logout-link="true" data-use-continue-as="false"></div>
+
+
+
+      </div>
+
+
+
+
+
+      <div class="col s4 offset-s1">
+
+          <h5 class="center-align"><strong>Suggested Topics</strong></h5>
+          <div class="nav-wrapper">
+            <form>
+              <div class="input-field">
+                <input id="search" type="search" required>
+                <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+                <i class="material-icons">close</i>
+              </div>
+            </form>
+          </div>
+        </div>
+
+
+      </div>
+
+
+{% endblock %}

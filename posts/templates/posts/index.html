@@ -1,0 +1,82 @@
+{% extends "posts/base.html" %}
+
+{% load staticfiles %}
+
+{% block content %}
+
+
+
+
+    <div class="row">
+      <br><br><br><br>
+      <div class="col s6 offset-s1">
+
+        <h4 class="left-align"><strong>Blogs</strong></h4>
+
+
+            {% for post in posts %}
+          <div class="card hoverable small">
+
+                <div class="card-image">
+                    <img src="{% static 'posts/images/login.jpg' %}">
+                    <span class="card-title">{{ post.title }}
+                        <p><h6>published: {{ post.timestamp }}</h6></p>
+                    </span>
+
+                </div>
+                <div class="card-content">
+
+                    <div class="chip">
+                        {{ post.brief|linebreaksbr }}
+                        <i class="close material-icons"></i>
+                    </div>
+
+
+                     <div class="right-align">
+                         <a class="waves-effect waves-light btn" href="blog/">More</a>
+
+                     </div>
+
+                </div>
+          </div>
+            {% endfor %}
+
+
+
+
+
+
+          <ul class="pagination">
+            <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
+            <li class="active"><a href="#!">1</a></li>
+            <li class="waves-effect"><a href="#!">2</a></li>
+            <li class="waves-effect"><a href="#!">3</a></li>
+            <li class="waves-effect"><a href="#!">4</a></li>
+            <li class="waves-effect"><a href="#!">5</a></li>
+            <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
+          </ul>
+      </div>
+
+
+
+
+      <div class="col s4 offset-s1">
+
+          <h5 class="center-align"><strong>Suggested Topics</strong></h5>
+          <div class="nav-wrapper">
+            <form>
+              <div class="input-field">
+                <input id="search" type="search" required>
+                <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+                <i class="material-icons">close</i>
+              </div>
+            </form>
+          </div>
+        </div>
+
+
+      </div>
+
+{% endblock %}
+
+

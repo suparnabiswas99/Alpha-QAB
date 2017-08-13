@@ -1,0 +1,78 @@
+{% extends "posts/base.html" %}
+
+
+
+{% block content %}
+
+
+
+    <div class="row">
+      <br><br><br><br>
+      <div class="col s6 offset-s1">
+
+
+        <div class="#e8eaf6 indigo lighten-5">
+            <h4 class="center-align"><strong>Profile</strong></h4>
+
+            <div class="card-panel grey lighten-5 z-depth-1">
+              <div class="row valign-wrapper">
+                <div class="col s2">
+                  <img src="{static 'posts/images/alpha.jpg'}" alt="" class="circle responsive-img"> <!-- notice the "circle" class -->
+                </div>
+                  <div class="col s3">
+                    <span class="black-text">
+                      Name LastName
+                      <br><br>
+                      <a class="waves-effect waves-light btn">follow+</a>
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              <h6>Name : </h6>
+              <br>
+              <h6>UserName : </h6>
+              <br>
+              <h6>Email : </h6>
+              <br>
+              <h6>Subscription </h6>
+              <!-- Switch -->
+              <div class="switch">
+                <label>
+                  Off
+                  <input type="checkbox">
+                  <span class="lever"></span>
+                  On
+                </label>
+              </div>
+              <br>
+
+
+
+            </div>
+
+
+      </div>
+
+
+
+
+
+        <div class="col s4 offset-s1">
+
+            <h5 class="center-align"><strong>Activity</strong></h5>
+            <br>
+            <div class="collection">
+              <a href="#!" class="collection-item"><span class="new badge red">1</span>Followers</a>
+              <a href="#!" class="collection-item"><span class="new badge blue">4</span>Questions</a>
+              <a href="#!" class="collection-item"><span class="new badge red">10</span>Answers</a>
+              <a href="#!" class="collection-item"><span class="new badge blue">14</span>Blogs</a>
+            </div>
+        </div>
+
+
+      </div>
+
+{% endblock %}
+
+

@@ -1,0 +1,18 @@
+{% extends "posts/base.html" %}
+{% block extrahead %}
+
+    <meta charset="UTF-8">
+    <title>{{form.title}}</title>
+{% endblock %}
+{% block content %}
+<h1>TELL US MORE</h1>
+<form method="post">
+    {% csrf_token %}
+    {% for field in form %}
+        {{ field.label_tag }}<br>
+        {{ field }}
+    {% endfor %}
+<button type="submit" class="waves-effect waves-light btn">Submit</button>
+</form>
+<br><br><br>
+{% endblock %}
