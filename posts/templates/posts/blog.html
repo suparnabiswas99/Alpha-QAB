@@ -1,0 +1,117 @@
+{% extends "posts/base.html" %}
+<script>
+    var writer = editor.dataProcessor.writer;
+
+    // The character sequence to use for every indentation step.
+    writer.indentationChars = '\t';
+
+    // The way to close self-closing tags, like <br />.
+    writer.selfClosingEnd = ' />';
+
+    // The character sequence to be used for line breaks.
+    writer.lineBreakChars = '\n';
+
+    // The writing rules for the <p> tag.
+    writer.setRules( 'p', {
+        // Indicates that this tag causes indentation on line breaks inside of it.
+        indent: true,
+
+        // Inserts a line break before the <p> opening tag.
+        breakBeforeOpen: true,
+
+        // Inserts a line break after the <p> opening tag.
+        breakAfterOpen: true,
+
+        // Inserts a line break before the </p> closing tag.
+        breakBeforeClose: false,
+
+        // Inserts a line break after the </p> closing tag.
+        breakAfterClose: true
+    });
+</script>
+{% block headtitle %}Blog{% endblock %}
+
+{% block content %}
+
+
+
+    <div class="row">
+      <br><br><br><br>
+      <div class="col s6 offset-s1">
+
+        <div class="#ffee58 yellow lighten-1">
+
+          <div class="container">
+
+            <div class="section">
+
+                <h1><strong>{{ instance.title }}<br/></strong></h1>
+                <h6><strong>{{ instance.updated }}<br></strong></h6>
+
+                <a href="https://www.facebook.com/sharer/sharer.php?u={{ request.build_absolute_uri }}">Facebook</a>
+                    |
+                    <a href="https://twitter.com/home?status={{ share_string }}%20{{ request.build_absolute_uri }}">Twitter</a>
+                    |
+                    <a href='https://plus.google.com/share?url={{ request.build_absolute_uri }}'>Google</a>
+                    |
+                    <a href="https://www.linkedin.com/shareArticle?mini=true&url={{ request.build_absolute_uri }}&title={{ instance.title }}&summary={{ share_string }}&source={{ request.build_absolute_uri }}">Linkedin</a>
+                    |
+                    <a href="http://www.reddit.com/submit?url={{ request.build_absolute_uri }}&title={{ share_string }}.">Reddit</a>
+
+                    <br><br><br>
+
+                <div class="content-markdown">
+                    {{ instance.content|safe }}
+                </div>
+                
+
+                <div class="right-align">
+
+                   <a class="btn-floating btn-small waves-effect waves-light red" href="delete/"><i class="material-icons">delete</i></a>
+                    <a class="btn-floating btn-small waves-effect waves-light blue" href="update/"><i class="material-icons">mode_edit</i></a>
+
+
+                </div>
+
+            </div>
+
+          </div>
+
+
+        </div>
+        <br>
+
+        <div class="fb-like" data-href="{{request.build_absolute_url}}" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
+
+        <div class="fb-comments" data-href="{{request.build_absolute_url}}" data-numposts="5"> </div>
+
+
+        <div class="fb-login-button" data-max-rows="1" data-size="large" data-button-type="login_with" data-show-faces="false" data-auto-logout-link="true" data-use-continue-as="false"></div>
+
+
+
+      </div>
+
+
+
+
+
+      <div class="col s4 offset-s1">
+
+          <h5 class="center-align"><strong>Suggested Topics</strong></h5>
+          <div class="nav-wrapper">
+            <form>
+              <div class="input-field">
+                <input id="search" type="search" required>
+                <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+                <i class="material-icons">close</i>
+              </div>
+            </form>
+          </div>
+        </div>
+
+
+      </div>
+
+
+{% endblock %}

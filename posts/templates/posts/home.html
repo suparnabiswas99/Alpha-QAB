@@ -1,0 +1,75 @@
+{% extends "posts/base.html" %}
+
+{% block headtitle %}Welcome{% endblock %}
+
+{% load staticfiles %}
+
+
+
+{% block content %}
+
+
+      <div class="parallax-container">
+        <div class="parallax"><img src="{% static 'posts/images/home.jpg' %}"></div>
+
+        <h2 class="header"> <span class="blue-text text-darken-2">Parallax</span></h2>
+        <h5 class="header"> <span class="blue-text text-darken-2">For background colors, you can apply the color simply by extending the classes like the example below.</span></h5>
+
+        <br><br><br>
+        <div class="center-align">
+          <h2 class="header"> <span class="blue-text text-darken-2">Choose One</span></h2>
+          <a class="waves-effect waves-light btn" href = "index/"><i class="material-icons left">cloud</i>Blog</a>
+          <h6>   </h6>
+          <a class="waves-effect waves-light btn"><i class="material-icons right">cloud</i>Q & A</a>
+
+          <div class="fb-login-button" data-max-rows="1" data-size="large" data-button-type="login_with" data-show-faces="false" data-auto-logout-link="true" data-use-continue-as="false"></div>
+
+
+        </div>
+
+      </div>
+
+
+      <div class="divider"></div>
+
+
+      <div class="#e0e0e0 grey lighten-2">
+
+        <div class="container">
+
+          <div class="section">
+            <div class="col s10">
+              <h5><strong>About Us</strong></h5>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sodales, ligula eu vulputate cursus, magna nibh imperdiet enim, volutpat venenatis velit urna ac tortor. Donec bibendum purus orci, vel mattis arcu pretium quis. Aliquam aliquet consectetur velit, et congue nisl egestas vitae. Ut tristique ligula ut quam commodo, aliquet vehicula sapien laoreet. Quisque mattis malesuada tellus sit amet vulputate. Vivamus urna eros, maximus et venenatis eget, porta sed purus. Etiam euismod, risus eget lacinia vehicula, nisi felis tincidunt nibh, feugiat blandit est ex et risus. Mauris in faucibus elit. Proin in turpis nibh. Pellentesque gravida, ante convallis rhoncus tempor, ligula neque ullamcorper magna, eu rutrum tellus nibh vitae dolor. Vivamus blandit, urna eget vestibulum iaculis, risus libero malesuada urna, et imperdiet libero tellus eu arcu.</p>
+
+
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+
+
+
+        <div class="divider"></div>
+
+
+        <div class="#e0e0e0 grey lighten-2">
+
+          <div class="container">
+            <div class="section">
+              <h5><strong>Contact</strong></h5>
+              <p>Proin sollicitudin scelerisque eleifend. Nullam at rutrum orci. Cras feugiat tellus a vestibulum ultricies. Praesent at tortor bibendum, finibus magna accumsan, pellentesque magna. Mauris sed risus sed turpis vestibulum varius sit amet et velit. Donec ac ullamcorper ipsum. Pellentesque eu augue ac enim hendrerit rhoncus. Vestibulum tristique sed elit sed sollicitudin. Quisque hendrerit urna vitae risus ornare, eget iaculis massa mollis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin non quam imperdiet, tincidunt ligula id, gravida purus. Pellentesque quis sem scelerisque, scelerisque orci posuere, sollicitudin enim. Donec id fermentum enim, semper lobortis lectus. Donec placerat elementum consectetur. Fusce dictum sollicitudin egestas.</p>
+
+            </div>
+
+           </div>
+
+          </div>
+
+
+{% endblock %}
+
+

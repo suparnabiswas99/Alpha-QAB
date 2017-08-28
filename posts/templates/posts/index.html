@@ -1,0 +1,125 @@
+{% extends "posts/base.html" %}
+
+{% load staticfiles %}
+
+{% block headtitle %}Home{% endblock %}
+
+{% block content %}
+
+<!--
+<div class="#ffcdd2 red lighten-4">
+    <div class="nav-wrapper">
+        <div class="col s12">
+            <a href=".." class="breadcrumb"><span class="blue-text text-darken-2">Home</span></a>
+            <a href="../index/" class="breadcrumb"><span class="active" class="blue-text text-darken-2">Blogs</span></a>
+            <a href="#!" class="breadcrumb"><span class="blue-text text-darken-2">Q & A</span></a>
+        </div>
+    </div>
+</div>
+-->
+
+
+
+    <div class="row">
+      <br><br>
+      <div class="col s6 offset-s1">
+          <div class="row">
+        <div class="col s3">
+            <h4 class="left-align"><strong>Blogs</strong></h4>
+        </div>
+              <div class="col s3 offset-s3">
+                  <a class="btn btn-floating btn-large blue pulse" href="create/"><i class="material-icons">edit</i></a>
+              </div>
+
+          </div>
+
+
+
+            {% for post in posts %}
+          <div class="card hoverable small">
+
+                <div class="card-image">
+                    <img src="{% static 'posts/images/login.jpg' %}">
+                    <span class="card-title">{{ post.title }}
+                        <p><h6>published: {{ post.timestamp }}</h6></p>
+                    </span>
+
+                </div>
+                <div class="card-content">
+
+                    <div class="chip">
+                        {{ post.brief|linebreaksbr }}
+                        <i class="close material-icons"></i>
+                    </div>
+
+
+                     <div class="right-align">
+                         <a class="waves-effect waves-light btn" href="{{post.id}}/">More</a>
+
+                     </div>
+
+                </div>
+          </div>
+            {% endfor %}
+
+
+
+
+
+          <ul class="pagination">
+              {% if posts.has_previous %}
+                <li class="waves-effect"><a href="?{{page_request_var}}={{ posts.previous_page_number }}"><i class="material-icons">chevron_left</i></a></li>
+              {% else %}
+                <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
+              {% endif %}
+
+                <li class="active"><a href="?{{page_request_var}}={{ posts.number }}">{{ posts.number }}</a></li>
+
+              {% if posts.has_next %}
+                <li class="waves-effect"><a href="?{{page_request_var}}={{ posts.next_page_number }}"><i class="material-icons">chevron_right</i></a></li>
+              {% else %}
+                <li class="disabled"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
+              {% endif %}
+          </ul>
+      </div>
+
+<!--
+        <div class="pagination">
+    <span class="step-links">
+        {% if posts.has_previous %}
+            <a href="?{{page_request_var}}={{ posts.previous_page_number }}">previous</a>
+        {% endif %}
+
+        <span class="current">
+            Page {{ posts.number }} of {{ posts.paginator.num_pages }}.
+        </span>
+
+        {% if posts.has_next %}
+            <a href="?{{page_request_var}}={{ contacts.next_page_number }}">next</a>
+        {% endif %}
+    </span>
+</div>
+-->
+
+
+
+      <div class="col s4 offset-s1">
+
+          <h5 class="center-align"><strong>Suggested Topics</strong></h5>
+          <div class="nav-wrapper">
+            <form>
+              <div class="input-field">
+                <input id="search" type="search" required>
+                <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+                <i class="material-icons">close</i>
+              </div>
+            </form>
+          </div>
+        </div>
+
+
+      </div>
+
+{% endblock %}
+
+

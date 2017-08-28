@@ -1,0 +1,15 @@
+{% load staticfiles %}
+     <!--Import Google Icon Font-->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+.brand-logo {
+   font-family: Pacifico;
+}
+html{
+	font-family: Roboto,fantasy,sans-serif;
+}
+
+#content {
+  overflow: hidden;
+  height: 1.6em !important;
+  width: auto;
+}
